@@ -1,163 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tanisha Mandlecha is a Data Analytics and Global Commerce student at Denison University.">
-	<title>Tanisha Mandlecha | Analytics & Global Commerce</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-	<style>
-		:root {
-			--navy: #102a43;
-			--blue: #176b87;
-			--sky: #dff5f5;
-			--mint: #9fe3d5;
-			--coral: #ef6f61;
-			--cream: #f8f8f3;
-			--white: #fff;
-			--ink-soft: #486174;
-			--line: #d9e4e5;
-			--display: "Space Grotesk", sans-serif;
-			--body: "DM Sans", sans-serif;
-			--mono: "DM Mono", monospace;
-		}
-		* { box-sizing: border-box; }
-		html { scroll-behavior: smooth; }
-		body { margin: 0; color: var(--navy); background: var(--cream); font-family: var(--body); }
-		a { color: inherit; text-decoration: none; }
-		.skip-link { position: absolute; left: 16px; top: -60px; padding: 10px 14px; color: var(--white); background: var(--navy); z-index: 10; }
-		.skip-link:focus { top: 16px; }
-		.container { width: min(1180px, calc(100% - 80px)); margin: 0 auto; }
-		header { display: flex; align-items: center; justify-content: space-between; padding: 27px 0; border-bottom: 1px solid var(--line); }
-		.logo { font: 700 18px var(--display); letter-spacing: -.04em; }
-		.logo span { color: var(--coral); }
-		nav { display: flex; gap: 30px; color: var(--ink-soft); font: 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-		nav a { transition: color .2s ease; }
-		nav a:hover, nav a:focus-visible { color: var(--coral); }
-		.header-note { color: var(--blue); font: 11px var(--mono); }
-		.hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); gap: 80px; align-items: end; min-height: 650px; padding: 100px 0 105px; }
-		.eyebrow, .section-label { margin: 0 0 23px; color: var(--coral); font: 11px var(--mono); letter-spacing: .13em; text-transform: uppercase; }
-		h1 { max-width: 800px; margin: 0; font: 600 clamp(4.6rem, 9.5vw, 9rem)/.9 var(--display); letter-spacing: -.075em; }
-		.hero h1 em { color: var(--blue); font-style: normal; }
-		.hero-intro { max-width: 610px; margin: 35px 0 0; color: var(--ink-soft); font-size: 18px; line-height: 1.65; }
-		.hero-aside { padding: 22px 0 0 27px; border-left: 2px solid var(--coral); }
-		.hero-aside p { margin: 0 0 22px; color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
-		.hero-aside strong { color: var(--navy); font-weight: 700; }
-		.location { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font: 11px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
-		.location::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
-		.impact { padding: 24px 0; color: var(--white); background: var(--navy); }
-		.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
-		.impact-card { padding: 20px 28px 20px 0; border-right: 1px solid rgba(255, 255, 255, .2); }
-		.impact-card + .impact-card { padding-left: 28px; }
-		.impact-card:last-child { border: 0; }
-		.impact-number { display: block; color: var(--mint); font: 600 43px/.95 var(--display); letter-spacing: -.06em; }
-		.impact-label { display: block; margin-top: 8px; color: #b9cbd2; font-size: 13px; }
-		.section { padding: 110px 0; }
-		.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 30px; margin-bottom: 52px; }
-		h2 { margin: 0; font: 600 clamp(2.5rem, 5vw, 4.4rem)/1 var(--display); letter-spacing: -.065em; }
-		.section-number { color: var(--blue); font: 11px var(--mono); }
-		.experience-list { border-top: 1px solid var(--navy); }
-		.experience-item { display: grid; grid-template-columns: 1.1fr 1.8fr .8fr; gap: 35px; padding: 33px 0; border-bottom: 1px solid var(--line); }
-		.experience-item h3 { margin: 0 0 6px; font: 600 22px var(--display); letter-spacing: -.03em; }
-		.role { color: var(--blue); font-size: 14px; font-weight: 600; }
-		.experience-item ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 14px; line-height: 1.65; }
-		.experience-item li + li { margin-top: 8px; }
-		.date { color: var(--ink-soft); font: 11px var(--mono); line-height: 1.6; text-align: right; }
-		.light-band { background: var(--sky); }
-		.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
-		.project { padding: 28px 0; border-top: 1px solid var(--blue); }
-		.project + .project { margin-top: 20px; }
-		.project-top { display: flex; justify-content: space-between; gap: 15px; }
-		.project h3 { margin: 0; font: 600 22px var(--display); letter-spacing: -.03em; }
-		.project-type { color: var(--coral); font: 10px var(--mono); text-transform: uppercase; }
-		.project p { margin: 14px 0 0; color: var(--ink-soft); font-size: 14px; line-height: 1.65; }
-		.education { padding: 28px; background: var(--white); border-top: 4px solid var(--coral); }
-		.education h3 { margin: 0 0 8px; font: 600 25px var(--display); letter-spacing: -.04em; }
-		.education p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
-		.edu-meta { display: flex; justify-content: space-between; gap: 15px; margin-top: 25px; color: var(--blue); font: 11px var(--mono); }
-		.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-		.skill-group { padding-top: 17px; border-top: 1px solid var(--navy); }
-		.skill-group h3 { margin: 0 0 22px; font: 600 20px var(--display); letter-spacing: -.03em; }
-		.skill-list { display: flex; flex-wrap: wrap; gap: 9px; }
-		.skill { padding: 10px 12px; color: var(--blue); background: var(--sky); font: 11px var(--mono); }
-		.contact { padding: 80px 0 95px; color: var(--white); background: var(--coral); }
-		.contact h2 { max-width: 720px; color: var(--navy); }
-		.contact p { max-width: 530px; margin: 25px 0 0; color: #5e3030; font-size: 17px; line-height: 1.6; }
-		.contact-meta { display: flex; flex-wrap: wrap; gap: 13px 28px; margin-top: 30px; color: var(--navy); font: 11px var(--mono); text-transform: uppercase; }
-		footer { color: #9eb1b9; background: var(--navy); font: 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
-		footer .container { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; }
-		@media (max-width: 760px) {
-			.container { width: min(100% - 40px, 590px); }
-			header { padding: 21px 0; }
-			nav { display: none; }
-			.header-note { font-size: 9px; }
-			.hero { display: block; min-height: auto; padding: 85px 0 90px; }
-			h1 { font-size: clamp(4.4rem, 20vw, 7rem); }
-			.hero-intro { font-size: 16px; }
-			.hero-aside { margin-top: 55px; }
-			.impact-grid { grid-template-columns: 1fr; gap: 0; }
-			.impact-card, .impact-card + .impact-card { padding: 20px 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .2); }
-			.impact-card:last-child { border-bottom: 0; }
-			.section { padding: 75px 0; }
-			.section-heading { margin-bottom: 35px; }
-			.experience-item { display: block; padding: 28px 0; }
-			.experience-item ul { margin-top: 20px; }
-			.date { margin-top: 19px; text-align: left; }
-			.two-column, .skills-layout { grid-template-columns: 1fr; gap: 55px; }
-			.project-top { display: block; }
-			.project-type { display: block; margin-top: 8px; }
-			footer .container { font-size: 8px; }
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanisha Mandlecha - Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+
+    a:hover {
+      color: #1abc9c;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 50px 20px;
+    }
+
+    .impact {
+      background: #f4f4f4;
+      text-align: center;
+    }
+
+    .impact-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+    }
+
+    .contact-meta span {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .headshot img {
+      margin-top: 20px;
+      border: 5px solid white;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .headshot img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-	<a class="skip-link" href="#main-content">Skip to content</a>
-	<header class="container">
-		<a class="logo" href="#top" aria-label="Tanisha Mandlecha home">T<span>.</span>M</a>
-		<nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#about">About</a></nav>
-		<span class="header-note">Analytics + global commerce</span>
-	</header>
-	<main id="main-content">
-		<section class="hero container" id="top" aria-labelledby="hero-title">
-			<div><p class="eyebrow">Data-driven. Globally minded.</p><h1 id="hero-title">Turning<br>data into <em>direction.</em></h1><p class="hero-intro">I'm Tanisha Mandlecha, a Data Analytics and Global Commerce student at Denison University. I connect business questions to clear insights, thoughtful systems, and action.</p></div>
-			<aside class="hero-aside"><p><strong>Currently:</strong> building practical experience across analytics, global operations, and strategic growth.</p><span class="location">Columbus, Ohio · Class of 2027</span></aside>
-		</section>
-		<section class="impact" aria-label="Career highlights"><div class="container impact-grid"><div class="impact-card"><span class="impact-number">60%</span><span class="impact-label">reporting effort targeted for reduction</span></div><div class="impact-card"><span class="impact-number">200+</span><span class="impact-label">client companies tracked in Power BI</span></div><div class="impact-card"><span class="impact-number">2nd</span><span class="impact-label">place in the Big Red Data Competition</span></div></div></section>
-		<section class="section container" id="experience" aria-labelledby="experience-title">
-			<div class="section-heading"><h2 id="experience-title">Experience</h2><span class="section-number">01 / Work history</span></div>
-			<div class="experience-list">
-				<article class="experience-item"><div><h3>Stradajī</h3><span class="role">Global Operations Intern</span></div><ul><li>Built an AI-powered proof of concept in Power BI to reduce reporting and dashboard effort by 60% and cost by 25%.</li><li>Developed 18+ SOPs, templates, and governance frameworks to drive process optimization.</li><li>Collaborated with leadership on organizational structures and strategies for scalability.</li></ul><div class="date">May — Jul 2026<br>Columbus, OH</div></article>
-				<article class="experience-item"><div><h3>Ohio Department of Development</h3><span class="role">Ohio Export Internship Program</span></div><ul><li>Selected as 1 of 65 interns statewide for a competitive export initiative supporting small and mid-sized firms.</li><li>Completed 40+ hours of training in international strategy, compliance, and market expansion.</li><li>Conducted global business readiness, SWOT, and cost-benefit analysis for 80 countries.</li></ul><div class="date">Jan — Apr 2026<br>Columbus, OH</div></article>
-				<article class="experience-item"><div><h3>Rev1 Ventures</h3><span class="role">Business Insights Intern</span></div><ul><li>Integrated investment and advisory data into a Power BI dashboard tracking 200+ client companies.</li><li>Automated data cleaning and workflows in Excel and Salesforce, improving CRM efficiency by 35%.</li><li>Analyzed Ohio startup ecosystem trends to guide impact reports for 70+ stakeholders.</li></ul><div class="date">Jan — Jul 2025<br>Columbus, OH</div></article>
-			</div>
-		</section>
-		<section class="light-band" id="projects"><div class="section container"><div class="section-heading"><h2>Selected work</h2><span class="section-number">02 / Projects</span></div><div class="two-column"><div><article class="project"><div class="project-top"><h3>DataConnect Conference</h3><span class="project-type">Data visualization</span></div><p>Built an interactive Flourish dashboard visualizing HDI metrics across education, income, and life expectancy to make global development patterns easier to compare.</p></article><article class="project"><div class="project-top"><h3>Big Red Data Competition</h3><span class="project-type">2nd place / 17 teams</span></div><p>Led donor retention analysis for a nonprofit, using SWOT analysis to raise projected retention from 36% to 51% and pitch a data-driven engagement model.</p></article></div><div class="education" id="about"><p class="section-label">Education</p><h3>Denison University</h3><p>B.A. Data Analytics and Global Commerce<br>Relevant courses: Business Analytics, Applied Statistics, Digital Humanities, Advanced Descriptive Analytics</p><div class="edu-meta"><span>GPA 3.86</span><span>Expected May 2027</span></div></div></div></div></section>
-		<section class="section container" aria-labelledby="skills-title"><div class="section-heading"><h2 id="skills-title">The toolkit</h2><span class="section-number">03 / Competencies</span></div><div class="skills-layout"><div class="skill-group"><h3>Technical skills</h3><div class="skill-list"><span class="skill">Power BI</span><span class="skill">Snowflake</span><span class="skill">SAS</span><span class="skill">SQL</span><span class="skill">Tableau</span><span class="skill">Salesforce</span><span class="skill">Advanced Excel</span><span class="skill">Data systems</span></div></div><div class="skill-group"><h3>Ways of working</h3><div class="skill-list"><span class="skill">Data storytelling</span><span class="skill">Stakeholder communication</span><span class="skill">Business acumen</span><span class="skill">Strategic thinking</span></div></div></div></section>
-		<section class="contact" aria-labelledby="contact-title"><div class="container"><p class="section-label">Let's connect</p><h2 id="contact-title">Curious about what the data is saying?</h2><p>I'm open to conversations about analytics, global business, and opportunities to turn complex questions into useful next steps.</p><div class="contact-meta"><span>Columbus, Ohio</span><span>Available for opportunities</span></div></div></section>
-	</main>
-	<footer><div class="container"><span>© 2026 Tanisha Mandlecha</span><span>Data analytics · Global commerce</span></div></footer>
-	<body>
-		<!-- Other sections of the website -->
-		
-		<!-- Add the "Let's connect" section here -->
-		<section class="contact" aria-labelledby="contact-title">
-		  <div class="container">
-			<p class="section-label">Let's connect</p>
-			<h2 id="contact-title">Curious about what the data is saying?</h2>
-			<p>I'm open to conversations about analytics, global business, and opportunities to turn complex questions into useful next steps.</p>
-			<div class="contact-meta">
-			  <span>Columbus, Ohio</span>
-			  <span>Available for opportunities</span>
-			</div>
-			<!-- Adding the headshot image -->
-			<div class="headshot">
-			  <img src="IMG_5305.png" alt="Tanisha Mandlecha Headshot" style="max-width: 150px; border-radius: 50%;">
-			</div>
-		  </div>
-		</section>
-		
-	  </body>
+  <header>
+    <span class="header-note">Analytics + Global Commerce</span>
+  </header>
+  <main id="main-content">
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Data-driven. Globally minded.</p>
+        <h1 id="hero-title">Turning<br>data into <em>direction.</em></h1>
+        <p class="hero-intro">I'm Tanisha Mandlecha, a Data Analytics and Global Commerce student at Denison University. I connect business questions to clear insights, thoughtful systems, and action.</p>
+      </div>
+    </section>
+    <section class="impact" aria-label="Career highlights">
+      <div class="container impact-grid">
+        <div class="impact-card">
+          <span class="impact-number">60%</span>
+          <span class="impact-label">reporting effort targeted for reduction</span>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">200+</span>
+          <span class="impact-label">client companies tracked in Power BI</span>
+        </div>
+        <div class="impact-card">
+          <span class="impact-number">2nd</span>
+          <span class="impact-label">place in the Big Red Data Competition</span>
+        </div>
+      </div>
+    </section>
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="section-label">Let's connect</p>
+        <h2 id="contact-title">Curious about what the data is saying?</h2>
+        <p>I'm open to conversations about analytics, global business, and opportunities to turn complex questions into useful next steps.</p>
+        <div class="contact-meta">
+          <span>Columbus, Ohio</span>
+          <span>Available for opportunities</span>
+        </div>
+        <div class="headshot">
+          <img src="IMG_5305.png" alt="Tanisha Mandlecha Headshot" style="max-width: 150px;">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <span>© 2026 Tanisha Mandlecha</span>
+      <span>Data analytics · Global commerce</span>
+    </div>
+  </footer>
 </body>
 </html>
